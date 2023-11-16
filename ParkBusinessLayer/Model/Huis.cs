@@ -14,7 +14,7 @@ namespace ParkBusinessLayer.Model
         public int Nr { get; private set; }
         public bool Actief { get; set; }
         public Park Park { get; private set; }
-        private Dictionary<Huurder,List<Huurcontract>> _huurcontracten = new  Dictionary<Huurder, List<Huurcontract>>();
+        private Dictionary<Huurder,List<Huurcontract>> _huurcontracten = new Dictionary<Huurder, List<Huurcontract>>();
 
         public Huis(int id, string straat, int nr, bool actief, Park park, Dictionary<Huurder, List<Huurcontract>> huurcontracten)
             : this(id, straat, nr, actief, park)

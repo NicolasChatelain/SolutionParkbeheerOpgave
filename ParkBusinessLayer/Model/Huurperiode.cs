@@ -10,6 +10,7 @@ namespace ParkBusinessLayer.Model
             EindDatum = startDatum.AddDays(aantaldagen);
             Aantaldagen = aantaldagen;
         }
+
         public DateTime StartDatum { get; set; }
         public DateTime EindDatum { get; set; }
         public int Aantaldagen { get; set; }
@@ -21,7 +22,6 @@ namespace ParkBusinessLayer.Model
                    EindDatum == huurperiode.EindDatum &&
                    Aantaldagen == huurperiode.Aantaldagen;
         }
-
         public override int GetHashCode()
         {
             return HashCode.Combine(StartDatum, EindDatum, Aantaldagen);

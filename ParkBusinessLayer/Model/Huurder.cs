@@ -20,6 +20,8 @@ namespace ParkBusinessLayer.Model
             ZetNaam(naam);
             ZetContactgegevens(contactgegevens);
         }
+
+
         public void ZetId(int id)
         {
             if (id <= 0) throw new ParkException("huurder - zetid");

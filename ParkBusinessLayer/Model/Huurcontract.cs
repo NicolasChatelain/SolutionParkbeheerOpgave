@@ -17,6 +17,8 @@ namespace ParkBusinessLayer.Model
         public Huurperiode Huurperiode { get; private set; }
         public Huurder Huurder { get; private set; }
         public Huis Huis { get; private set; }
+
+
         public void ZetId(string id)
         {
             if (string.IsNullOrWhiteSpace(id)) throw new ParkException("Park zetid");
