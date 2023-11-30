@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using ParkBusinessLayer.Model;
+﻿using ParkBusinessLayer.Model;
 using ParkDataLayer.Exceptions;
 using ParkDataLayer.Model;
 using System;

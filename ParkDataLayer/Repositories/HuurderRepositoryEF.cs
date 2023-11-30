@@ -6,7 +6,6 @@ using ParkDataLayer.Mappers;
 using ParkDataLayer.Model;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace ParkDataLayer.Repositories
@@ -97,7 +96,6 @@ namespace ParkDataLayer.Repositories
             try
             {
                 HuurderEF huurderEF = MapHuurder.DOMAIN_TO_EF(huurder);
-
 
                 _ctx.Huurders.Update(huurderEF);
                 SaveAndClear();

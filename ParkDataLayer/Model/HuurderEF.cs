@@ -15,6 +15,7 @@ namespace ParkDataLayer.Model
 
         public int ID { get; set; }
         public string Name { get; set; }
+        public int ContactgegevensID { get; set; }
         public ContactgegevensEF Contactgegevens { get; set; }
         public ICollection<HuurcontractEF> Contracts { get; set; }
     }
