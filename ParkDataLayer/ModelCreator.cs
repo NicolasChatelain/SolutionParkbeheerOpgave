@@ -1,10 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ParkDataLayer.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ParkDataLayer
 {
@@ -26,7 +21,6 @@ namespace ParkDataLayer
             x.Property(h => h.Street).HasColumnType("varchar(250)").IsRequired(false);
             x.Property(h => h.Nr).HasColumnType("int").IsRequired();
             x.Property(h => h.IsRentable).HasColumnType("bit").IsRequired();
-            x.HasOne(h => h.ParkEF).WithMany().IsRequired();
         }
 
         internal void HuurderEF()
@@ -36,17 +30,12 @@ namespace ParkDataLayer
             x.HasKey(pk => pk.ID);
             x.Property(pk => pk.ID).ValueGeneratedOnAdd().UseIdentityColumn(seed: 1, increment: 1);
             x.Property(h => h.Name).HasColumnType("varchar(100)").IsRequired();
-            x.Property(h => h.Phone).HasColumnType("varchar(100)");
-            x.Property(h => h.Email).HasColumnType("varchar(100)");
-            x.Property(h => h.Address).HasColumnType("varchar(100)");
-
+            x.HasOne(h => h.Contactgegevens);
         }    
         
         internal void ParkEF()
         {
             var x = modelbuilder.Entity<ParkEF>();
-
-            x.ToTable("Parken");
 
             x.HasKey(pk => pk.ID);
             x.Property(pk => pk.ID).HasColumnType("varchar(20)");
@@ -61,11 +50,29 @@ namespace ParkDataLayer
 
             x.HasKey(pk => pk.ID);
             x.Property(pk => pk.ID).HasColumnType("varchar(25)");
+
+            x.HasOne(hc => hc.Huurperiode)
+             .WithOne()
+             .HasForeignKey<HuurperiodeEF>(hp => hp.contractID).OnDelete(DeleteBehavior.Cascade);
+        }
+
+        internal void HuurPeriodeEF()
+        {
+            var x = modelbuilder.Entity<HuurperiodeEF>();
+
             x.Property(hc => hc.Start).HasColumnType("datetime2").IsRequired();
             x.Property(hc => hc.End).HasColumnType("datetime2").IsRequired();
             x.Property(hc => hc.AantalDagenVerhuurd).HasColumnType("int").IsRequired();
+        }
 
+        internal void ContactGegevensEF()
+        {
+            var x = modelbuilder.Entity<ContactgegevensEF>();
 
+            x.HasKey(pk => pk.ID);
+            x.Property(h => h.Phone).HasColumnType("varchar(100)");
+            x.Property(h => h.Email).HasColumnType("varchar(100)");
+            x.Property(h => h.Address).HasColumnType("varchar(100)");
         }
 
     }

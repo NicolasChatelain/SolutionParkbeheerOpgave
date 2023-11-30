@@ -16,7 +16,7 @@
   <Class Name="ParkBusinessLayer.Model.Contactgegevens">
     <Position X="5.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAgAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAgAAAAAAAAAIAAAAAA=</HashCode>
       <FileName>Model\Contactgegevens.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -62,7 +62,7 @@
   <Class Name="System.Collections.Generic.List&lt;T&gt;" Collapsed="true">
     <Position X="5.5" Y="1.5" Width="1.5" />
     <TypeIdentifier />
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.263" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

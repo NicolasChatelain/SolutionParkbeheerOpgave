@@ -20,14 +20,17 @@ namespace ParkDataLayer
 
 
 
+        public DbSet<ParkEF> Parken { get; set; }
         public DbSet<HuisEF> Huizen { get; set; }
         public DbSet<HuurderEF> Huurders { get; set; }
         public DbSet<HuurcontractEF> Contracten {  get; set; }
+        public DbSet<ContactgegevensEF> Gegevens {  get; set; }
+        public DbSet<HuurperiodeEF> Periodes {  get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connection).LogTo(Console.WriteLine, LogLevel.Information);
+            optionsBuilder.UseSqlServer(connection);/*.LogTo(Console.WriteLine, LogLevel.Information);*/
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -38,6 +41,8 @@ namespace ParkDataLayer
             CreateModel.ParkEF();
             CreateModel.HuurderEF();
             CreateModel.HuurcontractEF();
+            CreateModel.HuurPeriodeEF();
+            CreateModel.ContactGegevensEF();
         }
 
 

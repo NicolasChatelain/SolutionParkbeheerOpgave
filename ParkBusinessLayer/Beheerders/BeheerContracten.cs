@@ -26,7 +26,7 @@ namespace ParkBusinessLayer.Beheerders
             }
             catch (Exception ex)
             {
-                throw new BeheerderException("", ex);
+                throw new BeheerderException(ex.Message);
             }
         }
         public void AnnuleerContract(Huurcontract contract )
@@ -37,7 +37,7 @@ namespace ParkBusinessLayer.Beheerders
             }
             catch (Exception ex)
             {
-                throw new BeheerderException("", ex);
+                throw new BeheerderException(ex.Message);
             }
         }
         public void UpdateContract(Huurcontract contract)
@@ -49,7 +49,7 @@ namespace ParkBusinessLayer.Beheerders
             }
             catch (Exception ex)
             {
-                throw new BeheerderException("", ex);
+                throw new BeheerderException(ex.Message);
             }
         }
         public Huurcontract GeefContract(string id)
@@ -60,7 +60,7 @@ namespace ParkBusinessLayer.Beheerders
             }
             catch (Exception ex)
             {
-                throw new BeheerderException("", ex);
+                throw new BeheerderException(ex.Message);
             }
         }
         public List<Huurcontract> GeefContracten(DateTime dtBegin,DateTime? dtEinde)
@@ -71,7 +71,7 @@ namespace ParkBusinessLayer.Beheerders
             }
             catch (Exception ex)
             {
-                throw new BeheerderException("", ex);
+                throw new BeheerderException(ex.Message);
             }
         }
     }

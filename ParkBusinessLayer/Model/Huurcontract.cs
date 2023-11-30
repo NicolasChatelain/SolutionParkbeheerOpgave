@@ -13,6 +13,9 @@ namespace ParkBusinessLayer.Model
             ZetHuurder(huurder);
             ZetHuis(huis);
         }
+
+
+
         public string Id { get; private set; }
         public Huurperiode Huurperiode { get; private set; }
         public Huurder Huurder { get; private set; }

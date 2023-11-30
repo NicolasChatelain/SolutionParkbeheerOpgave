@@ -8,11 +8,18 @@ namespace ParkDataLayer.Model
 {
     public class HuisEF
     {
+        public HuisEF()
+        {
+            
+        }
+
         public int ID { get; set; }
         public string Street { get; set; }
         public int Nr { get; set; }
         public bool IsRentable {  get; set; }
-        public ParkEF ParkEF { get; set; }
+        public string ParkID {  get; set; }
+        public ParkEF Park { get; set; }
+        public List<HuurcontractEF> Contracts { get; set; }
 
     }
 }

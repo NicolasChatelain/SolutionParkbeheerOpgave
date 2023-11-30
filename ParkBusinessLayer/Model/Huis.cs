@@ -90,5 +90,17 @@ namespace ParkBusinessLayer.Model
             if (id <= 0) throw new ParkException("zetid");
             Id = id;
         }
+
+        public override string ToString()
+        {
+            return $"Huis {Id}:\n" +
+                $"\tStraat: {Straat}\n" +
+                $"\tNr: {Nr}\n" +
+                $"\tRentable: {Actief}\n\n" +
+                $"Park: {Park.Id}\n" +
+                $"\tNaam: {Park.Naam}\n" +
+                $"\tLocatie: {Park.Locatie}\n";
+               
+        }
     }
 }

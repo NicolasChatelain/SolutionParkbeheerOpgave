@@ -8,10 +8,14 @@ namespace ParkDataLayer.Model
 {
     public class HuurderEF
     {
+        public HuurderEF()
+        {
+            
+        }
+
         public int ID { get; set; }
         public string Name { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
-        public string Address { get; set; }
+        public ContactgegevensEF Contactgegevens { get; set; }
+        public ICollection<HuurcontractEF> Contracts { get; set; }
     }
 }

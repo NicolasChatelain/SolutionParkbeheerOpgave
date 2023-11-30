@@ -9,10 +9,9 @@ namespace ParkDataLayer.Model
     public class HuurcontractEF
     {
         public string ID {  get; set; }
-        public DateTime Start { get; set; }
-        public DateTime End { get; set; }
-        public int AantalDagenVerhuurd {  get; set; }
-        public HuisEF HuisEF { get; set; }
-        public HuurderEF HuurderEF { get; set;}
+        public HuisEF Huis {  get; set; }
+        public HuurderEF Huurder { get; set; }
+        public HuurperiodeEF Huurperiode { get; set;}
+
     }
 }
